@@ -1,0 +1,45 @@
+/*
+ * Button
+ */
+
+const int startButtonPin = 2;     // the number of the pushbutton pin
+const int pauseButtonPin = 3;
+const int stopButtonPin = 4;
+
+// variables will change:
+int startButtonState = 0;         // variable for reading the pushbutton status
+int pauseButtonState = 0;
+int stopButtonState = 0;
+
+void setup() {
+  pinMode(startButtonPin, INPUT);
+  pinMode(pauseButtonPin, INPUT);
+  pinMode(stopButtonPin, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+//  startButtonState = digitalRead(buttonPin);
+//
+//  if (buttonState == HIGH) {
+//    // turn LED on:
+//  } 
+
+  for(int i=0;i<24;i++) {
+    for(int j=0;j<60;j++) {
+      for(int k=0;k<60;k++) {
+	for(int l=0;l<100;l++) {
+	  Serial.print(i);
+	  Serial.print(":");
+	  Serial.print(j);
+	  Serial.print(":");
+	  Serial.print(k);
+	  Serial.print(":");
+	  Serial.print(l);
+	  Serial.println("");
+	  delay(10);
+	}
+      }
+    }
+  }
+}
